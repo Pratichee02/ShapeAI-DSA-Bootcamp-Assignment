@@ -1,29 +1,21 @@
 //Q4. Write a program to display Fibonacci Series upto nth term. (Using loops)
 
-#include <iostream>
+#include<iostream>
 using namespace std;
-
-int main() 
+int main()
 {
-    int year;
-
-    cout << "Enter a year: ";
-    cin >> year;
-
-    if (year % 4 == 0) 
+    int sum = 0, n;
+    int a = 0;
+    int b = 1;
+    cout << "Enter the nth value: ";
+    cin >> n;
+    cout << "Fibonacci series: ";
+    while(sum <= n)
     {
-        if (year % 100 == 0) 
-        {
-            if (year % 400 == 0)
-                cout << year << " is a leap year.";
-            else
-                cout << year << " is not a leap year.";
-        }
-        else
-            cout << year << " is a leap year.";
+        cout << sum << " ";
+        a = b;  // swap elements
+        b = sum;
+        sum = a + b;  // next term is the sum of the last two terms 
     }
-    else
-        cout << year << " is not a leap year.";
-
     return 0;
 }
